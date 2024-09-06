@@ -1,0 +1,29 @@
+spring:
+    application:
+      name: A
+    datasource:
+      url: jdbc:postgresql://localhost:5433/test
+      username: postgres
+      password: 1234
+      driver-class-name: org.postgresql.Driver
+
+    main:
+      allow-circular-references: true
+
+    jpa:
+      hibernate:
+        ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          format_sql: true
+          use_sql_comments: true
+          jdbc:
+            lob:
+              non_contextual_creation: true
+      show-sql: true
+    jackson:
+      serialization:
+        indent_output: true
+server:
+  port: 8082

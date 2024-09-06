@@ -1,0 +1,5 @@
+spring:
+    application:
+      name: 19_THY_SOPHEAK_OPENFEIGN_WITH_MULTIMOUDLE_PRACTICE
+server:
+  port: 9090
