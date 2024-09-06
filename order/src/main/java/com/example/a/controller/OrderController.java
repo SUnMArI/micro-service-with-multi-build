@@ -25,7 +25,7 @@ public class OrderController {
         OrderResponse orderResponse = orderService.post(orderRequest);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(ApiResponse.builder()
-                        .message("")
+                        .message("Order created")
                         .status(HttpStatus.OK)
                         .payload(orderResponse)
                         .timestamp(LocalDateTime.now()).build());
@@ -36,7 +36,7 @@ public class OrderController {
         List<OrderResponse> orderResponses = orderService.findAll();
         return ResponseEntity.status(HttpStatus.OK)
                 .body(ApiResponse.builder()
-                        .message("")
+                        .message("Orders found")
                         .status(HttpStatus.OK)
                         .payload(orderResponses)
                         .timestamp(LocalDateTime.now()).build());
@@ -46,7 +46,7 @@ public class OrderController {
         OrderResponse orderResponse = orderService.findById(id);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(ApiResponse.builder()
-                        .message("")
+                        .message("Order found")
                         .status(HttpStatus.OK)
                         .payload(orderResponse)
                         .timestamp(LocalDateTime.now()).build());
@@ -57,7 +57,7 @@ public class OrderController {
         OrderResponse orderResponse = orderService.updateById(id,orderRequest);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(ApiResponse.builder()
-                        .message("")
+                        .message("Order updated successfully")
                         .status(HttpStatus.OK)
                         .payload(orderResponse)
                         .timestamp(LocalDateTime.now()).build());
@@ -67,7 +67,7 @@ public class OrderController {
         Boolean orderResponse = orderService.deleteById(id);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(ApiResponse.builder()
-                        .message("")
+                        .message("Order was deleted successfully")
                         .status(HttpStatus.OK)
                         .payload(orderResponse)
                         .timestamp(LocalDateTime.now()).build());

@@ -35,8 +35,9 @@ public class OrderServiceImp implements OrderService {
           .getProductById(productId)
           .getBody().getPayload();
         } ).toList();
+        Order order = orderRepository.save(customerRequest.toEntity());
         OrderResponse orderResponse = new OrderResponse(
-                orderRepository.save(customerRequest.toEntity()).getId()
+                order.getId()
                 ,customerResponse
                 ,productResponses);
         return orderResponse;
